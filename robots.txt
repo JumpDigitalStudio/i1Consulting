@@ -1,0 +1,19 @@
+User-agent: *
+Disallow: /resources/scss
+Disallow: /resources/css
+Disallow: /scripts/
+Disallow: /vendor/
+Allow: /resources/images
+Allow: /resources/icons
+
+User-agent: Google
+Allow: /
+Disallow: /vendor/
+
+User-agent: Yandex
+Disallow: /resources/scss
+Disallow: /resources/css
+Disallow: /scripts/
+Disallow: /vendor/
+Allow: /resources/images
+Allow: /resources/icons
