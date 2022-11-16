@@ -2,7 +2,6 @@
 
 
 // ADAPTIVE IMAGES
-// =================================
 const mediaQuery = window.matchMedia('(max-width: 840px)');
 const mobImages = document.querySelectorAll('img[data-src]');
 function handleTabletChange(e) {
@@ -16,11 +15,9 @@ function handleTabletChange(e) {
 }
 mediaQuery.addListener(handleTabletChange);
 handleTabletChange(mediaQuery);
-// =================================
 
 
 // BURGER MENU
-// =================================
 const menuBtn = document.querySelector('.header__btn');
 const menuMobile = document.querySelector('.header__nav');
 const page = document.querySelector('body');
@@ -29,7 +26,6 @@ menuBtn.addEventListener('click', function () {
 	menuMobile.classList.toggle('open');
 	page.classList.toggle('lock');
 });
-// =================================
 // Mobile menu on links click close
 menuMobile.addEventListener('click', function (event) {
 	let target = event.target;
@@ -40,19 +36,16 @@ menuMobile.addEventListener('click', function (event) {
 		}
 	}
 });
-// =================================
 
 
 
 // SWITCH LANGUAGES SCRIPTS
-// =================================
 const selectHeader = document.querySelector('.select-lang__header');
 const selectBody = document.querySelector('.select-lang__body');
 const selectItem = document.querySelectorAll('.select-lang__item');
 const allLangs = ['ru', 'en'];
 // Onload language detect
 document.addEventListener('DOMContentLoaded', changeURL);
-// =================================
 // Change location hash
 function changeURL() {
 
@@ -61,7 +54,6 @@ function changeURL() {
 	location.href = window.location.pathname + '#' + choiceLang;
 	changeLang();
 }
-// =================================
 // Change text content
 function changeLang() {
 
@@ -83,12 +75,10 @@ function changeLang() {
 	}
 
 }
-// =================================
 // Open selector
 selectHeader.addEventListener('click', function () {
 	selectBody.classList.toggle('active');
 });
-// =================================
 // Change language icon
 selectBody.addEventListener('click', function (event) {
 
@@ -116,39 +106,53 @@ selectBody.addEventListener('click', function (event) {
 
 	changeURL();
 });
-// =================================
 
 
 
 // MODAL WINDOWS SCRIPTS
-// =================================
 // Modal window "Form Request"
 const myModal = new HystModal({
 	linkAttributeName: "data-hystmodal",
 });
-// =================================
+
+
+
+// IT VECTURA LANGS SWITCH
+// Get hash on click
+const btnVectura = document.querySelector('.goto-vectura');
+btnVectura.addEventListener('click', function () {
+	let hash = window.location.hash;
+	window.open('https://itvectura.com/' + hash, '_blank');
+});
+
+
+
+// PRESENTATION DOWNLOAD
+const btnPres = document.querySelector('.btn_doc');
+btnPres.addEventListener('click', function () {
+	let hash = window.location.hash;
+	hash = hash.substr(1);
+
+	btnPres.setAttribute('href', './presentations/' + hash + '_i1Consulting.pdf');
+});
 
 
 
 // BUTTON SCRIPTS
-// =================================
 // Buttons "Click effect"
 const btns = document.querySelectorAll('button');
 for (let i = 0; i < btns.length; i++) {
-	btns[i].addEventListener('click', function (e) {
+	btns[i].addEventListener('click', function () {
 		btns[i].classList.add('click');
 		setTimeout(() => btns[i].classList.remove('click'), 100);
 	});
 }
-// =================================
 
 
 
 // NAVIGATION LINKS SCRIPTS
-// =================================
 // Navigation links pattern
 const getSectionId = (link) => link.getAttribute('href').replace('#', '');
-// =================================
 // Navigation links "Click effect"
 const navLinks = document.querySelectorAll('.nav__link');
 for (let i = 0; i < navLinks.length; i++) {
@@ -157,7 +161,6 @@ for (let i = 0; i < navLinks.length; i++) {
 		setTimeout(() => navLinks[i].classList.remove('click'), 100);
 	});
 }
-// =================================
 // Navigation links "On scroll active effect"
 const observer = new IntersectionObserver((entries) => {
 	entries.forEach((entry) => {
@@ -174,7 +177,6 @@ const observer = new IntersectionObserver((entries) => {
 document.querySelectorAll('.scroll-section').forEach(
 	(sections) => observer.observe(sections),
 );
-// =================================
 // Navigation links "Smooth scroll"
 document.querySelectorAll('.nav__list').forEach(
 	(lists) => lists.addEventListener('click', (event) => {
@@ -187,12 +189,10 @@ document.querySelectorAll('.nav__list').forEach(
 		}
 	}),
 );
-// =================================
 
 
 
 // FORMS SCRIPTS
-// =================================
 // Forms "Check validate and Send"
 const forms = document.querySelectorAll('form');
 for (let i = 0; i < forms.length; i++) {
@@ -222,6 +222,9 @@ for (let i = 0; i < forms.length; i++) {
 
 			let th = $(this);
 
+			let hash = window.location.hash;
+			hash = hash.substr(1);
+
 			$.ajax({
 				url: actionURL,
 				type: 'POST',
@@ -229,17 +232,39 @@ for (let i = 0; i < forms.length; i++) {
 				success: function (data) {
 					if (data == 'uncorrect') {
 						btnSend.classList.remove('wait');
-						btnSend.innerHTML = 'Некорректная почта';
+
+						if (hash === 'ru') {
+							btnSend.innerHTML = 'Некорректная почта';
+						} else if (hash === 'en') {
+							btnSend.innerHTML = 'Incorrect E-mail';
+						} else if (hash === 'tr') {
+							btnSend.innerHTML = 'Yanlış e-posta';
+						}
 						return false;
 					} else {
 						btnSend.classList.remove('wait');
-						btnSend.innerHTML = 'Отправлено';
+
+						if (hash === 'ru') {
+							btnSend.innerHTML = 'Отправлено';
+						} else if (hash === 'en') {
+							btnSend.innerHTML = 'Sent';
+						} else if (hash === 'tr') {
+							btnSend.innerHTML = 'Gönderildi';
+						}
+
 						th.trigger('reset');
 					}
 				},
 				error: function () {
 					btnSend.classList.remove('wait');
-					btnSend.innerHTML = 'Ошибка';
+
+					if (hash === 'ru') {
+						btnSend.innerHTML = 'Ошибка отправки';
+					} else if (hash === 'en') {
+						btnSend.innerHTML = 'Send error';
+					} else if (hash === 'tr') {
+						btnSend.innerHTML = 'Gönderme hatası';
+					}
 				}
 			})
 		} else {
@@ -261,10 +286,12 @@ for (let i = 0; i < forms.length; i++) {
 					error++;
 				}
 			} else {
-				if (input.value === '') {
-					addError(input);
-					btnAddError(btnSend);
-					error++;
+				for (let i = 0; i < formReq.length; i++) {
+					if (formReq[i].value === '') {
+						addError(input);
+						btnAddError(btnSend);
+						error++;
+					}
 				}
 			}
 		}
@@ -284,5 +311,4 @@ for (let i = 0; i < forms.length; i++) {
 		return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(input.value);
 	}
 }
-// =================================
 

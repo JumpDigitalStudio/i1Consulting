@@ -814,6 +814,9 @@ html {
   .card__title_solutions {
     margin: 0px 0px 38px 0px;
   }
+  .card__title_solutions > .card__row:nth-child(1) {
+    max-width: 500px;
+  }
   .card__column_sap:nth-child(1) {
     width: auto;
     max-width: 285px;
@@ -829,6 +832,9 @@ html {
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-between;
+  }
+  .card__column_sap:nth-child(3) > .card__row:nth-child(2) {
+    width: 391px;
   }
   .card__column_vectura:nth-child(1) {
     max-width: none;
@@ -862,6 +868,9 @@ html {
   .card__column_sap:nth-child(3) {
     flex-wrap: wrap;
     justify-content: flex-start;
+  }
+  .card__column_sap:nth-child(3) > .card__row:nth-child(2) {
+    width: auto;
   }
 }
 @media (max-width: 520px) {

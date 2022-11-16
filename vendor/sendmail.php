@@ -1,47 +1,71 @@
 <?php
 
-$to = 'info@i1cons.com';
-$from = "From: Заявка с сайта i1 Consulting\n\r";
-
-$page = 'Лендинг i1 Consulting';
-
-$CName = $_POST['clientName'];
-$CMail = $_POST['clientMail'];
-$CRequest = $_POST['clientRequest'];
+// Form data
+$name = $_POST['clientName'];
+$mail = $_POST['clientMail'];
+$request = $_POST['clientRequest'];
 
 $date = date("d.m.Y");
 $time = date("h:i");
 
-$theme = 'Заявка с сайта i1 Consulting';
+// E-mail data
+$to = 'info@i1cons.com';
+$from = "From: Заявка с сайта i1.consulting\n\r";
+
+$page = 'i1 Consulting';
+$theme = 'Заявка с сайта i1.consulting';
+
+// E-mail headers
+$headers = "Content-type: text/html; charset=utf-8\r\n";
+$headers .= $from;
+
+// Telegram bot token
+$token = "5612776289:AAG8VWNl8E8zB1MMOLE6Nxg_LAy91-MaHB4";
+$chat_id = "-813127054";
+
+// Data for Telegram
+$siteName = 'i1 Consulting';
+$arr = array(
+	'Заявка с сайта: ' => $siteName,
+	'Дата:' => $date,
+	'Время: ' => $time,
+	'Имя: ' => $name,
+	'E-mail: ' => $mail,
+	'Вопрос: ' => $request
+);
+
+foreach ($arr as $key => $value) {
+	$txt .= "<b>" . $key . "</b>" . $value . "%0A";
+};
 
 $message = '
 <html>
 <body>
 <center>	
-<table border=1 cellpadding=6 cellspacing=0 width=90% bordercolor="#01426A">
+<table border=1 cellpadding=6 cellspacing=0 width=350 bordercolor="#01426A">
  <tr><td colspan=2 align=center bgcolor="#E9F0F6"><b>Пользовательская информация</b></td></tr>
  <tr>
-  <td><b>Откуда</b></td>
+  <td><b>С сайта</b></td>
   <td>' . $page . '</td>
  </tr>
  <tr>
-  <td><b>Адрес клиента</b></td>
-  <td><a href="mailto:' . $CMail . '">' . $CMail . '</a></td>
+  <td><b>E-mail</b></td>
+  <td><a href="mailto:' . $mail . '">' . $mail . '</a></td>
  </tr>
  <tr>
-  <td><b>Имя клиента</b></td>
-  <td>' . $CName . '</td>
+  <td><b>Имя</b></td>
+  <td>' . $name . '</td>
  </tr>
  <tr>
-  <td><b>Сообщение</b></td>
-  <td>' . $CRequest . '</td>
+  <td><b>Вопрос</b></td>
+  <td>' . $request . '</td>
  </tr>
  <tr>
- <td><b>Дата отправки</b></td>
+ <td><b>Дата</b></td>
  <td>' . $date . '</td>
 </tr>	
 <tr>
-	<td><b>Время отправки</b></td>
+	<td><b>Время</b></td>
 	<td>' . $time . '</td>
 </tr>
 </table>
@@ -49,14 +73,13 @@ $message = '
 </body>
 </html>';
 
-$headers = "Content-type: text/html; charset=utf-8\r\n";
-$headers .= $from;
-
-$domain = substr(strrchr($CMail, "@"), 1);
+$domain = substr(strrchr($mail, "@"), 1);
 $res = getmxrr($domain, $mx_records, $mx_weight);
 
 if (false == $res || 0 == count($mx_records) || (1 == count($mx_records) && ($mx_records[0] == null || $mx_records[0] == "0.0.0.0"))) {
 	echo 'uncorrect';
 } else {
+	$sendToTelegram = fopen("https://api.telegram.org/bot{$token}/sendMessage?chat_id={$chat_id}&parse_mode=html&text={$txt}", "r");
+
 	mail($to, $theme, $message, $headers);
 }

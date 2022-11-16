@@ -85,7 +85,7 @@ const langs = {
 	"sapST4": {
 		"ru": "Логистика",
 		"en": "Logistics",
-		"tr": "Lojistik",
+		"tr": "Lojistiks",
 	},
 	"sapST5": {
 		"ru": "HR и вовлеченность персонала",
@@ -100,8 +100,8 @@ const langs = {
 	// IT Vectura
 	"vecturaT1": {
 		"ru": "Система управления логистикой ITV",
-		"en": "Logistic management system ITV",
-		"tr": "IT VECTURA Ekositemi",
+		"en": "Logistics management system ITV",
+		"tr": "IT VECTURA Ekosistemi",
 	},
 	"vecturaTX1": {
 		"ru": "Создание и реализация инфраструктурной модели транспортной логистики",
@@ -125,7 +125,7 @@ const langs = {
 	},
 	"vecturaTX5": {
 		"ru": "Повышение эффективности взаимодействия с партнерами",
-		"en": "Partner interaction raise in efficiency",
+		"en": "Increasing partnerships efficiency",
 		"tr": "Ortaklarla etkileşimin verimliliğini artırmak",
 	},
 	// =================================
@@ -157,24 +157,24 @@ const langs = {
 		"tr": "Sonuç",
 	},
 	"designingTX1": {
-		"ru": "Формулирование требований заказчика, Регламент бизнес процессов, Организационная структура, Показатели эффективности(KPI)",
-		"en": "Formulation of customer’s demands, Business-processes regulation, Organizational chart, Key performance indicators (KPI), ",
-		"tr": "Müşteri gereksinimlerinin formülasyonu İş süreci yönetmeliği, Örgütsel yapı",
+		"ru": "Формулирование требований заказчика, регламент бизнес процессов, организационная структура, показатели эффективности (KPI)",
+		"en": "Formulation of customer’s demands, business-processes regulation, organizational chart, key performance indicators (KPI), ",
+		"tr": "Müşteri gereksinimlerinin formülasyonu iş süreci yönetmeliği, örgütsel yapı",
 	},
 	"designingTX2": {
-		"ru": "Опрос пользователей, Протоколирование обсуждаемых решений",
-		"en": "Customer survey, Logging of discussed decisions",
-		"tr": "Kullanıcı anketi, Tartışılan kararların protokole kaydedilmesi",
+		"ru": "Опрос пользователей, протоколирование обсуждаемых решений",
+		"en": "Customer survey, logging of discussed decisions",
+		"tr": "Kullanıcı anketi, tartışılan kararların protokole kaydedilmesi",
 	},
 	"designingTX3": {
-		"ru": "Согласование протоколов решений, Контроль отклонений KPI решения",
-		"en": "Reconciliation of protocols, decisions, Control over KPI deviations from the solution",
+		"ru": "Согласование протоколов решений, контроль отклонений KPI решения",
+		"en": "Reconciliation of protocols, decisions, control over KPI deviations from the solution",
 		"tr": "Karar protokollerinin koordinasyonu, KPI kararlarındaki sapmaların kontrolü",
 	},
 	"designingTX4": {
-		"ru": "Концептуальный дизайн, Систематизация оптимизация процессов(AS-IS и TO-BE), Технико-экономическое обоснование, Протоколы решений",
-		"en": "Design concept, Systematization and optimization of processes (AS IS and TO BE), Feasibility study, Protocols of taken decisions ",
-		"tr": "Kavramsal tasarım,  Sistematizasyon süreç optimizasyonu (AS-IS ve TO-BE), Fizibilite gerekçesi, Çözüm protokolleri",
+		"ru": "Концептуальный дизайн, систематизация оптимизация процессов (AS-IS и TO-BE), технико-экономическое обоснование, протоколы решений",
+		"en": "Design concept, systematization and optimization of processes (AS IS and TO BE), feasibility study, protocols of taken decisions ",
+		"tr": "Kavramsal tasarım,  sistematizasyon süreç optimizasyonu (AS-IS ve TO-BE), fizibilite gerekçesi, çözüm protokolleri",
 	},
 	// Audit
 	"auditT1": {
@@ -287,7 +287,7 @@ const langs = {
 	"request": {
 		"ru": "Ваш запрос",
 		"en": "Your question",
-		"tr": "Sorunuz ",
+		"tr": "Sorunuz",
 	},
 	// =================================
 }

@@ -37,7 +37,6 @@ html {
 	padding: 0;
 	margin: 0;
 	font-family: 'Open Sans', sans-serif;
-
 }
 
 .page {
@@ -1106,6 +1105,10 @@ html {
 		&__title {
 			&_solutions {
 				margin: 0px 0px 38px 0px;
+
+				&>.card__row:nth-child(1) {
+					max-width: 500px;
+				}
 			}
 		}
 
@@ -1129,6 +1132,10 @@ html {
 					display: flex;
 					flex-wrap: nowrap;
 					justify-content: space-between;
+
+					&>.card__row:nth-child(2) {
+						width: 391px;
+					}
 				}
 			}
 
@@ -1181,6 +1188,10 @@ html {
 				&:nth-child(3) {
 					flex-wrap: wrap;
 					justify-content: flex-start;
+
+					&>.card__row:nth-child(2) {
+						width: auto;
+					}
 				}
 			}
 		}

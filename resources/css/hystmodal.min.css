@@ -72,8 +72,8 @@
 	background: #fff;
 	border-radius: 28px;
 	padding: 30px;
-	width: 400px;
-	max-width: 100%;
+	width: calc(100% - 20px);
+	max-width: 440px;
 	overflow: visible;
 	transition: transform .2s ease 0s, opacity .2s ease 0s;
 	transform: scale(.9);
@@ -109,12 +109,16 @@
 	outline-offset: 2px
 }
 
-@media (max-width:767px) {
+@media (max-width: 520px) {
+	.hystmodal__wrap {
+		justify-content: flex-start;
+	}
+
 	.hystmodal__close {
 		display: none;
 	}
 
 	.hystmodal__window {
-		margin: 0
+		margin: 130px 0px 0px 0px;
 	}
 }
