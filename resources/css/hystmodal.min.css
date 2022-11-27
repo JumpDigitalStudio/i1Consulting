@@ -80,6 +80,10 @@
 	opacity: 0
 }
 
+.hystmodal__window.new {
+	max-width: 650px;
+}
+
 .hystmodal--active .hystmodal__window {
 	transform: scale(1);
 	opacity: 1
@@ -120,5 +124,9 @@
 
 	.hystmodal__window {
 		margin: 130px 0px 0px 0px;
+	}
+
+	.hystmodal__window.new {
+		max-width: 440px;
 	}
 }

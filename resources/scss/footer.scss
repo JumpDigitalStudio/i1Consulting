@@ -1,0 +1,113 @@
+@charset "UTF-8";
+
+// Цветовая палитра сайта 
+// =================================
+// W - White
+$W: #FFFFFF;
+// Bl - Black
+$BL: #101010;
+// G - Gray
+$G1: #C0C0C0;
+$G2: #EFEFEF;
+// R - Red
+$R: #E50000;
+// OC - Other Colors
+$OC1: #EFEFEF;
+$OC2: #E9F0F6;
+// B - Blue
+$B1: #01426A;
+$B2: #00619C;
+$B3: #008FE7;
+// =================================
+
+.footer {
+	flex-wrap: wrap;
+	align-content: space-between;
+
+	&__container {
+		justify-content: space-between;
+		align-items: flex-start;
+		height: 100%;
+	}
+
+	&__body,
+	&__bar {
+		width: 100%;
+		height: fit-content;
+	}
+
+	&__contacts {
+		flex-direction: column;
+
+		&>a {
+			margin: 0px 0px 27px 0px;
+		}
+	}
+
+	&__nav {
+		max-width: 293px;
+		width: 100%;
+	}
+
+	&__create-info {
+		width: 100%;
+		justify-content: flex-start;
+	}
+
+	@media (max-width: 840px) {
+		&__container {
+			flex-wrap: wrap;
+		}
+
+		&__logo {
+			display: flex;
+			justify-content: center;
+			width: 100%;
+			margin: 0px 0px 40px 0px;
+		}
+
+		&__contacts {
+			width: 50%;
+		}
+
+		&__nav {
+			max-width: none;
+			width: 50%;
+		}
+
+		&__body {
+			margin: 0px 0px 20px 0px;
+		}
+
+		&__bar {
+			display: flex;
+			justify-items: center;
+		}
+
+		&__create-info {
+			justify-content: center;
+		}
+	}
+
+	@media (max-width: 520px) {
+		&__container {
+			flex-direction: column;
+			justify-content: center;
+		}
+
+		&__contacts {
+			width: 100%;
+			text-align: center;
+
+			margin: 0px 0px 20px 0px;
+
+			&>a {
+				margin: 0px 0px 20px 0px;
+			}
+		}
+
+		&__nav {
+			width: 100%;
+		}
+	}
+}

@@ -1,7 +1,5 @@
-"use strict"
-
-
-// ADAPTIVE IMAGES
+// Адаптивные изображения
+// =================================
 const mediaQuery = window.matchMedia('(max-width: 840px)');
 const mobImages = document.querySelectorAll('img[data-src]');
 function handleTabletChange(e) {
@@ -16,17 +14,60 @@ function handleTabletChange(e) {
 mediaQuery.addListener(handleTabletChange);
 handleTabletChange(mediaQuery);
 
+// Анимации
+// =================================
+let animItems = document.querySelectorAll('._anim');
+if (animItems.length > 0) {
+	window.addEventListener('scroll', animOnScroll);
 
-// BURGER MENU
+	function animOnScroll() {
+		for (let i = 0; i < animItems.length; i++) {
+			const animItem = animItems[i];
+			const animItemHeight = animItem.offsetHeight;
+			const animItemOffset = offset(animItem).top;
+			const animStart = 2;
+
+			let animItemPoint = window.innerHeight - animItemHeight / animStart;
+
+			if (animItemHeight > window.innerHeight) {
+				animItemPoint = window.innerHeight - window.innerHeight / animStart;
+			}
+
+			if ((pageYOffset > animItemOffset - animItemPoint) && pageYOffset < (animItemOffset + animItemHeight)) {
+				if (animItem.classList.contains('_anim_fade')) {
+					animItem.classList.add('_anim-fadeIn');
+				} else if (animItem.classList.contains('_anim_scale')) {
+					animItem.classList.add('_anim-scaleIn');
+				}
+			} else {
+				if (!animItem.classList.contains('_anim-once')) {
+					animItem.classList.remove('_anim-fadeIn');
+					animItem.classList.remove('_anim-scaleIn');
+				}
+			}
+		}
+	}
+};
+function offset(el) {
+	const rect = el.getBoundingClientRect(),
+		scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
+		scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+	return { top: rect.top + scrollTop, left: rect.left + scrollLeft }
+};
+animOnScroll();
+// =================================
+
+// Мобильное меню
+// =================================
 const menuBtn = document.querySelector('.header__btn');
 const menuMobile = document.querySelector('.header__nav');
 const page = document.querySelector('body');
-// Mobile menu open
+// Открытие
 menuBtn.addEventListener('click', function () {
 	menuMobile.classList.toggle('open');
 	page.classList.toggle('lock');
 });
-// Mobile menu on links click close
+// Закрытие (при клике на ссылку)
 menuMobile.addEventListener('click', function (event) {
 	let target = event.target;
 	if (target.classList.contains('nav__link')) {
@@ -36,17 +77,17 @@ menuMobile.addEventListener('click', function (event) {
 		}
 	}
 });
+// =================================
 
-
-
-// SWITCH LANGUAGES SCRIPTS
+// Смена языков
+// =================================
 const selectHeader = document.querySelector('.select-lang__header');
 const selectBody = document.querySelector('.select-lang__body');
 const selectItem = document.querySelectorAll('.select-lang__item');
 const allLangs = ['ru', 'en'];
-// Onload language detect
+// Определение языка
 document.addEventListener('DOMContentLoaded', changeURL);
-// Change location hash
+// Смена хэша
 function changeURL() {
 
 	let choiceLang = selectHeader.querySelector('.active').getAttribute('data-value');
@@ -54,7 +95,7 @@ function changeURL() {
 	location.href = window.location.pathname + '#' + choiceLang;
 	changeLang();
 }
-// Change text content
+// Смена текста
 function changeLang() {
 
 	let hash = window.location.hash;
@@ -75,11 +116,11 @@ function changeLang() {
 	}
 
 }
-// Open selector
+// Открытие селектора
 selectHeader.addEventListener('click', function () {
 	selectBody.classList.toggle('active');
 });
-// Change language icon
+// Смена иконки селектора
 selectBody.addEventListener('click', function (event) {
 
 	let target = event.target;
@@ -106,209 +147,237 @@ selectBody.addEventListener('click', function (event) {
 
 	changeURL();
 });
+// =================================
 
-
-
-// MODAL WINDOWS SCRIPTS
-// Modal window "Form Request"
+// Модальные окна
+// =================================
 const myModal = new HystModal({
 	linkAttributeName: "data-hystmodal",
 });
 
-
-
-// IT VECTURA LANGS SWITCH
-// Get hash on click
-const btnVectura = document.querySelector('.goto-vectura');
-btnVectura.addEventListener('click', function () {
-	let hash = window.location.hash;
-	window.open('https://itvectura.com/' + hash, '_blank');
-});
-
-
-
-// PRESENTATION DOWNLOAD
-const btnPres = document.querySelector('.btn_doc');
-btnPres.addEventListener('click', function () {
-	let hash = window.location.hash;
-	hash = hash.substr(1);
-
-	btnPres.setAttribute('href', './presentations/' + hash + '_i1Consulting.pdf');
-});
-
-
-
-// BUTTON SCRIPTS
-// Buttons "Click effect"
-const btns = document.querySelectorAll('button');
-for (let i = 0; i < btns.length; i++) {
-	btns[i].addEventListener('click', function () {
-		btns[i].classList.add('click');
-		setTimeout(() => btns[i].classList.remove('click'), 100);
+// Смена языка при клике на ITV
+// =================================
+if (document.querySelector('.goto-vectura')) {
+	const btnVectura = document.querySelector('.goto-vectura');
+	btnVectura.addEventListener('click', function () {
+		let hash = window.location.hash;
+		window.open('https://itvectura.com/' + hash, '_blank');
 	});
 }
+// =================================
 
+// Скачивание презентации
+// =================================
+if (document.querySelector('.btn_doc')) {
+	const btnPres = document.querySelector('.btn_doc');
+	btnPres.addEventListener('click', function () {
+		let hash = window.location.hash;
+		hash = hash.substr(1);
 
+		btnPres.setAttribute('href', './presentations/' + hash + '_i1Consulting.pdf');
+	});
+}
+// =================================
 
-// NAVIGATION LINKS SCRIPTS
-// Navigation links pattern
+// Эффект клика кнопки
+// =================================
+if (document.querySelectorAll('.button')) {
+	const btns = document.querySelectorAll('button');
+	for (let i = 0; i < btns.length; i++) {
+		btns[i].addEventListener('click', function () {
+			btns[i].classList.add('click');
+			setTimeout(() => btns[i].classList.remove('click'), 100);
+		});
+	}
+}
+// =================================
+
+// Навигационные ссылки
+// =================================
 const getSectionId = (link) => link.getAttribute('href').replace('#', '');
-// Navigation links "Click effect"
-const navLinks = document.querySelectorAll('.nav__link');
-for (let i = 0; i < navLinks.length; i++) {
-	navLinks[i].addEventListener('click', function () {
-		navLinks[i].classList.add('click');
-		setTimeout(() => navLinks[i].classList.remove('click'), 100);
-	});
+if (document.querySelectorAll('.nav__link')) {
+	const navLinks = document.querySelectorAll('.nav__link');
+	for (let i = 0; i < navLinks.length; i++) {
+		navLinks[i].addEventListener('click', function () {
+			navLinks[i].classList.add('click');
+			setTimeout(() => navLinks[i].classList.remove('click'), 100);
+		});
+	}
+	const observer = new IntersectionObserver((entries) => {
+		entries.forEach((entry) => {
+			if (entry.isIntersecting) {
+				document.querySelectorAll('.scroll-link').forEach((link) => {
+					link.classList.toggle(
+						'focus',
+						getSectionId(link) === entry.target.id
+					);
+				});
+			}
+		});
+	}, { threshold: 0.7, });
+	document.querySelectorAll('.scroll-section').forEach(
+		(sections) => observer.observe(sections),
+	);
+	document.querySelectorAll('.nav__list').forEach(
+		(lists) => lists.addEventListener('click', (event) => {
+			if (event.target.classList.contains('nav__link')) {
+				event.preventDefault();
+				window.scrollTo({
+					top: document.getElementById(getSectionId(event.target)).offsetTop,
+					behavior: 'smooth',
+				});
+			}
+		}),
+	);
 }
-// Navigation links "On scroll active effect"
-const observer = new IntersectionObserver((entries) => {
-	entries.forEach((entry) => {
-		if (entry.isIntersecting) {
-			document.querySelectorAll('.scroll-link').forEach((link) => {
-				link.classList.toggle(
-					'focus',
-					getSectionId(link) === entry.target.id
-				);
-			});
+// =================================
+
+// Отправка форм
+// =================================
+if (document.querySelectorAll('.form')) {
+	const forms = document.querySelectorAll('.form');
+	for (let i = 0; i < forms.length; i++) {
+
+		forms[i].addEventListener('input', checkValidate);
+		forms[i].addEventListener('submit', formSend);
+
+		const actionURL = forms[i].getAttribute('action');
+
+		const btnSend = forms[i].querySelector('.form__btn');
+
+		function checkValidate() {
+
+			let error = formValidate(forms[i]);
+
+			if (error != 0) {
+				btnAddError;
+			}
 		}
-	});
-}, { threshold: 0.7, });
-document.querySelectorAll('.scroll-section').forEach(
-	(sections) => observer.observe(sections),
-);
-// Navigation links "Smooth scroll"
-document.querySelectorAll('.nav__list').forEach(
-	(lists) => lists.addEventListener('click', (event) => {
-		if (event.target.classList.contains('nav__link')) {
-			event.preventDefault();
-			window.scrollTo({
-				top: document.getElementById(getSectionId(event.target)).offsetTop,
-				behavior: 'smooth',
-			});
-		}
-	}),
-);
+		async function formSend(e) {
+			e.preventDefault();
 
+			let error = formValidate(forms[i]);
 
+			if (error === 0) {
+				btnSend.classList.add('wait');
 
-// FORMS SCRIPTS
-// Forms "Check validate and Send"
-const forms = document.querySelectorAll('form');
-for (let i = 0; i < forms.length; i++) {
+				let th = $(this);
 
-	forms[i].addEventListener('input', checkValidate);
-	forms[i].addEventListener('submit', formSend);
+				let hash = window.location.hash;
+				hash = hash.substr(1);
 
-	const actionURL = forms[i].getAttribute('action');
+				$.ajax({
+					url: actionURL,
+					type: 'POST',
+					data: th.serialize(),
+					success: function (data) {
+						if (data == 'uncorrect') {
+							btnSend.classList.remove('wait');
 
-	const btnSend = forms[i].querySelector('.form__btn');
+							if (hash === 'ru') {
+								btnSend.innerHTML = 'Некорректная почта';
+							} else if (hash === 'en') {
+								btnSend.innerHTML = 'Incorrect E-mail';
+							} else if (hash === 'tr') {
+								btnSend.innerHTML = 'Yanlış e-posta';
+							}
+							return false;
+						} else {
+							btnSend.classList.remove('wait');
 
-	function checkValidate() {
+							if (hash === 'ru') {
+								btnSend.innerHTML = 'Отправлено';
+							} else if (hash === 'en') {
+								btnSend.innerHTML = 'Sent';
+							} else if (hash === 'tr') {
+								btnSend.innerHTML = 'Gönderildi';
+							}
 
-		let error = formValidate(forms[i]);
-
-		if (error != 0) {
-			btnAddError;
-		}
-	}
-	async function formSend(e) {
-		e.preventDefault();
-
-		let error = formValidate(forms[i]);
-
-		if (error === 0) {
-			btnSend.classList.add('wait');
-
-			let th = $(this);
-
-			let hash = window.location.hash;
-			hash = hash.substr(1);
-
-			$.ajax({
-				url: actionURL,
-				type: 'POST',
-				data: th.serialize(),
-				success: function (data) {
-					if (data == 'uncorrect') {
+							th.trigger('reset');
+						}
+					},
+					error: function () {
 						btnSend.classList.remove('wait');
 
 						if (hash === 'ru') {
-							btnSend.innerHTML = 'Некорректная почта';
+							btnSend.innerHTML = 'Ошибка отправки';
 						} else if (hash === 'en') {
-							btnSend.innerHTML = 'Incorrect E-mail';
+							btnSend.innerHTML = 'Send error';
 						} else if (hash === 'tr') {
-							btnSend.innerHTML = 'Yanlış e-posta';
+							btnSend.innerHTML = 'Gönderme hatası';
 						}
-						return false;
-					} else {
-						btnSend.classList.remove('wait');
-
-						if (hash === 'ru') {
-							btnSend.innerHTML = 'Отправлено';
-						} else if (hash === 'en') {
-							btnSend.innerHTML = 'Sent';
-						} else if (hash === 'tr') {
-							btnSend.innerHTML = 'Gönderildi';
-						}
-
-						th.trigger('reset');
 					}
-				},
-				error: function () {
-					btnSend.classList.remove('wait');
-
-					if (hash === 'ru') {
-						btnSend.innerHTML = 'Ошибка отправки';
-					} else if (hash === 'en') {
-						btnSend.innerHTML = 'Send error';
-					} else if (hash === 'tr') {
-						btnSend.innerHTML = 'Gönderme hatası';
-					}
-				}
-			})
-		} else {
-			btnAddError;
+				})
+			} else {
+				btnAddError;
+			}
 		}
-	}
-	function formValidate(form) {
-		let error = 0;
-		let formReq = form.querySelectorAll('._req');
+		function formValidate(form) {
+			let error = 0;
+			let formReq = form.querySelectorAll('._req');
 
-		for (let i = 0; i < formReq.length; i++) {
-			const input = formReq[i];
-			removeError(input);
+			for (let i = 0; i < formReq.length; i++) {
+				const input = formReq[i];
+				removeError(input);
 
-			if (input.classList.contains('_email')) {
-				if (emailTest(input)) {
+				if (input.value == '') {
 					addError(input);
 					btnAddError(btnSend);
 					error++;
 				}
-			} else {
-				for (let i = 0; i < formReq.length; i++) {
-					if (formReq[i].value === '') {
+
+				if (input.classList.contains('_email')) {
+					if (emailTest(input)) {
 						addError(input);
 						btnAddError(btnSend);
 						error++;
 					}
 				}
 			}
+			return error;
 		}
-		return error;
-	}
-	function btnAddError() {
-		btnSend.classList.add('error');
-	}
-	function addError(input) {
-		input.classList.add('error');
-	}
-	function removeError(input) {
-		input.classList.remove('error');
-		btnSend.classList.remove('error');
-	}
-	function emailTest(input) {
-		return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(input.value);
+		function btnAddError() {
+			btnSend.classList.add('error');
+		}
+		function addError(input) {
+			input.classList.add('error');
+		}
+		function removeError(input) {
+			input.classList.remove('error');
+			btnSend.classList.remove('error');
+		}
+		function emailTest(input) {
+			return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(input.value);
+		}
 	}
 }
+// =================================
+
+// Переключение контактов
+// =================================
+if (document.querySelector('.contacts__offices')) {
+	const officeBody = document.querySelector('.contacts__offices');
+	const offices = officeBody.querySelectorAll('.contacts__office');
+	const mapMc = document.querySelector('.map_mc');
+	const mapKz = document.querySelector('.map_kz');
+	officeBody.addEventListener('click', function (event) {
+		let target = event.target;
+
+		if (target.classList.contains('contacts__office')) {
+			for (let i = 0; i < offices.length; i++) {
+				offices[i].classList.remove('active');
+			}
+		}
+
+		target.classList.add('active');
+		if (target.getAttribute('data-value') === 'mc') {
+			mapMc.classList.add('active');
+			mapKz.classList.remove('active');
+		} else if (target.getAttribute('data-value') === 'kz') {
+			mapMc.classList.remove('active');
+			mapKz.classList.add('active');
+		}
+	});
+}
+// =================================
 
