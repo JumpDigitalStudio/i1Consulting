@@ -24,10 +24,10 @@ $token = "5612776289:AAG8VWNl8E8zB1MMOLE6Nxg_LAy91-MaHB4";
 $chat_id = "-813127054";
 
 // Data for Telegram
-$siteName = 'i1 Consulting';
+$siteName = 'i1 CONSULTING';
 $arr = array(
-	'Заявка с сайта: ' => $siteName,
-	'Дата:' => $date,
+	'С сайта: ' => $siteName,
+	'Дата: ' => $date,
 	'Время: ' => $time,
 	'Имя: ' => $name,
 	'E-mail: ' => $mail,
@@ -76,10 +76,13 @@ $message = '
 $domain = substr(strrchr($mail, "@"), 1);
 $res = getmxrr($domain, $mx_records, $mx_weight);
 
-if (false == $res || 0 == count($mx_records) || (1 == count($mx_records) && ($mx_records[0] == null || $mx_records[0] == "0.0.0.0"))) {
-	echo 'uncorrect';
-} else {
-	$sendToTelegram = fopen("https://api.telegram.org/bot{$token}/sendMessage?chat_id={$chat_id}&parse_mode=html&text={$txt}", "r");
+$sendToTelegram = fopen("https://api.telegram.org/bot{$token}/sendMessage?chat_id={$chat_id}&parse_mode=html&text={$txt}", "r");
+$sendToMail = mail($to, $theme, $message, $headers);
 
-	mail($to, $theme, $message, $headers);
+if (!$sendToMail) {
+	echo 'ermail';
+} else if (!$sendToTelegram) {
+	echo 'ertel';
+} else {
+	echo 'send';
 }

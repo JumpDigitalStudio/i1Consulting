@@ -81,7 +81,7 @@
 }
 
 .hystmodal__window.new {
-	max-width: 650px;
+	max-width: 550px;
 }
 
 .hystmodal--active .hystmodal__window {
@@ -124,6 +124,7 @@
 
 	.hystmodal__window {
 		margin: 130px 0px 0px 0px;
+		padding: 20px;
 	}
 
 	.hystmodal__window.new {

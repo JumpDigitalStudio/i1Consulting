@@ -1,7 +1,5 @@
 const langs = {
-
 	// Links and titles
-	// =================================
 	"connectLink": {
 		"ru": "Связаться с нами",
 		"en": "Connect us",
@@ -37,10 +35,9 @@ const langs = {
 		"en": "Connect us",
 		"tr": "Bizimle iletişime geçin",
 	},
-	// =================================
+
 
 	// Buttons
-	// =================================
 	"presentation": {
 		"ru": "Смотреть презентацию",
 		"en": "See the presentation",
@@ -51,29 +48,30 @@ const langs = {
 		"en": "Send",
 		"tr": "Gönder",
 	},
-	// =================================
+
 
 	// Blocks
-	// =================================
 	// TX - Default text
 	// T - Title
 	// ST - Subtitle
 	// D - Description
 	// BT - Button
-	// =================================
+
+
 	// About
 	"aboutTX1": {
-		"ru": "i1Consulting предоставляет услуги по оптимизации, автоматизации и трансформации логистических бизнес-процессов как на базе платформы SAP, так и на базе собственных решений.",
-		"en": "i1 Consulting provides services for optimization, automation and transformation of logistics business processes based on SAP platform or on our own solutions.",
-		"tr": "i1 Consulting  hem SAP platformu bazında hem de kendi çözümlerine dayalı olarak lojistik iş süreçlerinin optimize edilmesi, otomatikleştirilmesi ve dönüştürülmesine yönelik hizmetler sunmaktadır.",
+		"ru": "i1Consulting предоставляет услуги по оптимизации, автоматизации и трансформации логистических бизнес-процессов, используя собственные разработки, решения SAP и 1С.",
+		"en": "i1 Consulting provides services for optimization, automation and transformation of logistics business processes using own developments, SAP and 1C solutions.",
+		"tr": "i1 Consulting, kendi geliştirmeleri, SAP ve 1C çözümleri ile lojistik iş süreçlerinin optimizasyonu, otomasyonu ve dönüşümü için hizmetler sunmaktadır.",
 	},
 	"aboutTX2": {
 		"ru": "Основана командой экспертов в цифровизации бизнес-процессов логистики.",
 		"en": "Founded by team of experts in digitalization of logistics business-processes.",
 		"tr": "Lojistik iş süreçlerinin dijitalleştirilmesi konusunda uzman bir ekip tarafından kurulmuştur.",
 	},
+
+
 	// Solutions
-	// SAP
 	"sapST1": {
 		"ru": "Цифровая цепочка поставок",
 		"en": "Digital supply chain",
@@ -104,7 +102,6 @@ const langs = {
 		"en": "Development, integration, infrastructure",
 		"tr": "Geliştirme, entegrasyon, altyapı",
 	},
-	// IT Vectura
 	"vecturaT1": {
 		"ru": "Система управления логистикой ITV",
 		"en": "Logistics management system ITV",
@@ -135,9 +132,14 @@ const langs = {
 		"en": "Increasing partnerships efficiency",
 		"tr": "Ortaklarla etkileşimin verimliliğini artırmak",
 	},
-	// =================================
+
+
 	// Services
-	// Designing
+	"servicesST1": {
+		"ru": "Транспортная логистика",
+		"en": "Transport logistics",
+		"tr": "Nakliye lojistiği",
+	},
 	"designingT1": {
 		"ru": "Проектирование",
 		"en": "Design",
@@ -165,7 +167,7 @@ const langs = {
 	},
 	"designingTX1": {
 		"ru": "Формулирование требований заказчика, регламент бизнес процессов, организационная структура, показатели эффективности (KPI)",
-		"en": "Formulation of customer’s demands, business-processes regulation, organizational chart, key performance indicators (KPI), ",
+		"en": "Formulation of customer’s demands, business processes regulation, organizational chart, key performance indicators (KPI), ",
 		"tr": "Müşteri gereksinimlerinin formülasyonu iş süreci yönetmeliği, örgütsel yapı",
 	},
 	"designingTX2": {
@@ -183,7 +185,6 @@ const langs = {
 		"en": "Design concept, systematization and optimization of processes (AS IS and TO BE), feasibility study, protocols of taken decisions ",
 		"tr": "Kavramsal tasarım,  sistematizasyon süreç optimizasyonu (AS-IS ve TO-BE), fizibilite gerekçesi, çözüm protokolleri",
 	},
-	// Audit
 	"auditT1": {
 		"ru": "Аудит",
 		"en": "Audit",
@@ -239,7 +240,6 @@ const langs = {
 		"en": "Giving recommendations for processes automation and for strengthening weak spots in IT processes",
 		"tr": "Süreçlerin otomatikleştirilmesi ve BT süreçlerindeki zayıf yerlerin güçlendirilmesi konusunda tavsiyelerde bulunulması",
 	},
-	// Support
 	"supportT1": {
 		"ru": "Поддержка",
 		"en": "Support",
@@ -265,9 +265,9 @@ const langs = {
 		"en": "Keeping own base on standard issues, incidents and its solutions. Quick solution search  due to experience from previous requests",
 		"tr": "Tipik sorunlar, olaylar ve bunları çözme yollarını içeren kendi bilgi tabanını yürütme. Önceki uygulamaların deneyimine dayanarak hızlı çözüm bulma",
 	},
-	// =================================
+
+
 	// News
-	// New 1:Stambul
 	"newsST1": {
 		"ru": "Выставка «Logitrans»",
 		"en": "Exhibition «Logitrans»",
@@ -303,7 +303,8 @@ const langs = {
 		"en": "Through participation in the exhibition, the company «i1 Consulting» has found new partners and clients, received an excellent opportunity to present their brand on an international platform, as well as shared their own experiences and adopted best practices from colleagues.",
 		"tr": "Through participation in the exhibition, the company «i1 Consulting» has found new partners and clients, received an excellent opportunity to present their brand on an international platform, as well as shared their own experiences and adopted best practices from colleagues.",
 	},
-	// =================================
+
+
 	// Contacts
 	"contactsST1": {
 		"ru": "Россия",
@@ -325,9 +326,9 @@ const langs = {
 		"en": "Street 187, building 20, Saryarka str., Astana, Kazakhstan",
 		"tr": "Kazakistan, Astana, Sarıarka Bölgesi, 187. sokak, bina 20",
 	},
-	// =================================
+
+
 	// Request
-	// Block
 	"requestST1": {
 		"ru": "Будем рады ответить на ваш вопрос",
 		"en": "We will be glad to answer your question",
@@ -338,6 +339,8 @@ const langs = {
 		"en": "By pressing “SEND” button I consent to processing my personal data",
 		"tr": "*Gönder* düğmesine tıklayarak kişisel verilerimin işlenmesine izin veriyorum",
 	},
+
+
 	// Form
 	"name": {
 		"ru": "Ваше имя",
@@ -349,5 +352,4 @@ const langs = {
 		"en": "Your question",
 		"tr": "Sorunuz",
 	},
-	// =================================
 }
