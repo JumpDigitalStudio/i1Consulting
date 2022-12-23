@@ -1,4 +1,4 @@
-# i1Consilting 
+# i1Consulting 
 
 Experts in digitalization of logistics business-processes web-site.
 
