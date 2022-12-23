@@ -1,8 +1,7 @@
 # i1Consulting 
 
-Experts in digitalization of logistics business-processes web-site.
+i1 Consulting provides services for optimization, automation and transformation of logistics business processes using own developments, SAP and 1C solutions.
 
-![Logo](https://github.com/JumpDigitalStudio/i1Consilting/blob/master/public/resources/favicons/mstile-150x150.png)
 ## Commerce
 
 http://i1.consulting/
