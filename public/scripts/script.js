@@ -47,6 +47,29 @@ else {
 };
 
 
+// Industries slider
+const swiperPortfolio = new Swiper('.industries__slider', {
+	// Optional parameters
+	direction: 'horizontal',
+	loop: true,
+	slidesPerView: 1,
+	autoHeight: true,
+	spaceBetween: 30,
+	// Autoplay
+	autoplay: {
+		delay: 3000,
+		stopOnLastSlide: false,
+		desableOnInteraction: true,
+	},
+	// Pagination
+	pagination: {
+		el: ".industries__pag",
+		dynamicBullets: true,
+		clickable: true,
+	},
+});
+
+
 // Modal windows
 const myModal = new HystModal({
 	linkAttributeName: "data-hystmodal",

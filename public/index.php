@@ -2,31 +2,7 @@
 <html lang="ru" prefix="og: http://ogp.me/ns#">
 
 <head>
-	<!-- Meta options -->
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-	<!-- Style connect links -->
-	<!-- Libs -->
-	<link rel="stylesheet" href="/resources/css/hystmodal.min.css?5">
-	<link rel="stylesheet" href="/resources/css/normalize.css?4">
-	<!-- Main -->
-	<link rel="stylesheet" href="/resources/css/style.css?6">
-
-	<!-- Font connect links -->
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-
-	<!-- Favicon -->
-	<link rel="apple-touch-icon" sizes="180x180" href="/resources/favicons/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="/resources/favicons/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="/resources/favicons/favicon-16x16.png">
-	<link rel="manifest" href="/resources/favicons/site.webmanifest">
-	<link rel="mask-icon" href="/resources/favicons/safari-pinned-tab.svg" color="#01426a">
-	<meta name="msapplication-TileColor" content="#01426a">
-	<meta name="theme-color" content="#ffffff">
+	<? require($_SERVER["DOCUMENT_ROOT"] . "/modules/meta.php"); ?>
 
 	<!-- SEO -->
 	<title>Оптимизация логистики — i1 Consulting</title>
@@ -151,7 +127,6 @@
 
 	<!-- CONTENT -->
 	<main class="content page__content">
-
 		<!-- About section -->
 		<section class="about content__about" id="about">
 			<div class="container about__body">
@@ -298,7 +273,7 @@
 							<div class="sol-1c__item">
 								<!-- Title -->
 								<p class="text text_m text_wsb">
-									Компетенция по отраслям
+									Компетенция по решениям
 								</p>
 								<!-- Content -->
 								<div class="sol-1c__content">
@@ -331,7 +306,7 @@
 							<div class="sol-1c__item">
 								<!-- Title -->
 								<p class="text text_m text_wsb">
-									Компетенция по решениям
+									Компетенция по отраслям
 								</p>
 								<!-- Content -->
 								<div class="sol-1c__content">
@@ -368,63 +343,179 @@
 					</h2>
 				</div>
 				<!-- Cards -->
-				<div class="industries__cards">
-					<!-- Retail -->
-					<div class="industries__card card _anim _anim_d1">
-						<!-- Title -->
-						<div class="industries__title">
-							<h3 class="text text_xl text_wsb">РИТЕЙЛ</h3>
-						</div>
-						<!-- Content -->
-						<div class="industries__content">
-							<p class="text text_m">
-								Решения TMS, внедренные компанией i1Consulting, помогли совместить сокращение времени доставки товара до
-								клиента, магазина, склада с минимизацией операционных издержек и затрат.
-							</p>
-							<p class="text text_m text_wsb">
-								С нами сотрудничают
-							</p>
-							<div class="industries__pics">
-								<div class="industries__pic">
-									<img src="/resources/images/industries/mvideo.svg" alt="М.Видео">
+				<div class="swiper industries__slider">
+					<div class="swiper-wrapper">
+						<!-- Slides -->
+						<!-- Retail -->
+						<div class="swiper-slide">
+							<div class="industries__card card _anim _anim_d1">
+								<!-- Title -->
+								<div class="industries__title">
+									<h3 class="text text_xl text_wsb">РИТЕЙЛ</h3>
 								</div>
-								<div class="industries__pic">
-									<img src="/resources/images/industries/miratorg.svg" alt="Мираторг">
-								</div>
-								<div class="industries__pic">
-									<img src="/resources/images/industries/globus.svg" alt="Globus">
+								<!-- Content -->
+								<div class="industries__content">
+									<p class="text text_m">
+										Решения TMS, внедренные компанией i1Consulting, помогли совместить сокращение времени доставки товара до клиента, магазина, склада с минимизацией операционных издержек и затрат.
+									</p>
+									<p class="text text_m text_wsb">
+										С нами сотрудничают
+									</p>
+									<div class="industries__pics">
+										<div class="industries__pic">
+											<img src="/resources/images/industries/retail/mvideo.svg" alt="М.Видео">
+										</div>
+										<div class="industries__pic">
+											<img src="/resources/images/industries/retail/miratorg.svg" alt="Мираторг">
+										</div>
+										<div class="industries__pic">
+											<img src="/resources/images/industries/retail/globus.svg" alt="Globus">
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
-					</div>
-					<!-- Oil & Gas -->
-					<div class="industries__card card _anim _anim_d1">
-						<!-- Title -->
-						<div class="industries__title">
-							<h3 class="text text_xl text_wsb">НЕФТЕГАЗ</h3>
-						</div>
-						<!-- Content -->
-						<div class="industries__content">
-							<p class="text text_m">
-								Автоматизация логистических процессов компаний нефтегазовой отрасли. Внедрение систем управления
-								транспортом позволило цифровизировать процесс календарного планирования, повысить прозрачность
-								исполнения перевозок, позволило автоматизировать сверку транспортных расходов с контрагентами.
-							</p>
-							<p class="text text_m text_wsb">
-								С нами сотрудничают
-							</p>
-							<div class="industries__pics">
-								<div class="industries__pic">
-									<img src="/resources/images/industries/gazprom.svg" alt="Газпром">
+						<!-- Oil & Gas -->
+						<div class="swiper-slide">
+							<div class="industries__card card _anim _anim_d1">
+								<!-- Title -->
+								<div class="industries__title">
+									<h3 class="text text_xl text_wsb">НЕФТЕГАЗ</h3>
 								</div>
-								<div class="industries__pic">
-									<img src="/resources/images/industries/lukoil.svg" alt="Лукойл">
+								<!-- Content -->
+								<div class="industries__content">
+									<p class="text text_m">
+										Автоматизация логистических процессов компаний нефтегазовой отрасли. Внедрение систем управления
+										транспортом позволило цифровизировать процесс календарного планирования, повысить прозрачность
+										исполнения перевозок, позволило автоматизировать сверку транспортных расходов с контрагентами.
+									</p>
+									<p class="text text_m text_wsb">
+										С нами сотрудничают
+									</p>
+									<div class="industries__pics">
+										<div class="industries__pic">
+											<img src="/resources/images/industries/oilgas/gazprom_ru.svg" alt="Газпром">
+										</div>
+										<div class="industries__pic">
+											<img src="/resources/images/industries/oilgas/lukoil_ru.svg" alt="Лукойл">
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- Production -->
+						<div class="swiper-slide">
+							<div class="industries__card card _anim _anim_d1">
+								<!-- Title -->
+								<div class="industries__title">
+									<h3 class="text text_xl text_wsb">ПРОИЗВОДСТВО</h3>
+								</div>
+								<!-- Content -->
+								<div class="industries__content">
+									<p class="text text_m">
+										Внедрение корпоративных систем, что позволяет обеспечить горизонтальную и вертикальную интеграцию бизнес-процессов и потоков данных внутри компании и создать эффективный инструмент для принятия своевременных управленческих решений на оперативном и стратегическом уровне.
+									</p>
+									<p class="text text_m text_wsb">
+										С нами сотрудничают
+									</p>
+									<div class="industries__pics">
+										<div class="industries__pic">
+											<img src="/resources/images/industries/production/polus_ru.svg" alt="Полюс">
+										</div>
+										<div class="industries__pic">
+											<img src="/resources/images/industries/production/ee.png" alt="Enter Engineering">
+										</div>
+										<div class="industries__pic">
+											<img src="/resources/images/industries/production/ferroni.svg" alt="Ferroni">
+										</div>
+										<div class="industries__pic">
+											<img src="/resources/images/industries/production/ecg.png" alt="Euro Cement Group">
+										</div>
+										<div class="industries__pic">
+											<img src="/resources/images/industries/production/silmash.svg" alt="Силовые машины">
+										</div>
+										<div class="industries__pic">
+											<img src="/resources/images/industries/production/rsm.svg" alt="Ростсельмаш">
+										</div>
+										<div class="industries__pic">
+											<img src="/resources/images/industries/production/ilim.svg" alt="ИЛИМ">
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- Chemistry -->
+						<div class="swiper-slide">
+							<div class="industries__card card _anim _anim_d1">
+								<!-- Title -->
+								<div class="industries__title">
+									<h3 class="text text_xl text_wsb">ХИМИЯ</h3>
+								</div>
+								<!-- Content -->
+								<div class="industries__content">
+									<p class="text text_m">
+										Спроектирован и реализован комплекс работ по автоматизации бизнес-процессов системы управления транспортировками, решения для краткосрочного планирования по существующим потребностям, исполнение перевозок, формирование кастомизированных печатных форм и построение отчетности через корпоративную систему.
+									</p>
+									<p class="text text_m text_wsb">
+										С нами сотрудничают
+									</p>
+									<div class="industries__pics">
+										<div class="industries__pic">
+											<img src="/resources/images/industries/chemistry/sibur_ru.svg" alt="Сибур">
+										</div>
+										<div class="industries__pic">
+											<img src="/resources/images/industries/chemistry/phosagro_ru.svg" alt="Фосагро">
+										</div>
+										<div class="industries__pic">
+											<img src="/resources/images/industries/chemistry/nnh.svg" alt="НижнекамскНефтеХим">
+										</div>
+										<div class="industries__pic">
+											<img src="/resources/images/industries/chemistry/azot.svg" alt="АЗОТ">
+										</div>
+										<div class="industries__pic">
+											<img src="/resources/images/industries/chemistry/eurochem.svg" alt="МХК ЕвроХим">
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- Metallurgy -->
+						<div class="swiper-slide">
+							<div class="industries__card card _anim _anim_d1">
+								<!-- Title -->
+								<div class="industries__title">
+									<h3 class="text text_xl text_wsb">МЕТАЛЛУРГИЯ</h3>
+								</div>
+								<!-- Content -->
+								<div class="industries__content">
+									<p class="text text_m">
+										Интеграция платформенных решений для выполнения бесшовных перевозок с использованием систем прослеживаемости и электронных товарно-транспортных документов.
+									</p>
+									<p class="text text_m text_wsb">
+										С нами сотрудничают
+									</p>
+									<div class="industries__pics">
+										<div class="industries__pic">
+											<img src="/resources/images/industries/metall/severstal_ru.svg" alt="Северсталь">
+										</div>
+										<div class="industries__pic">
+											<img src="/resources/images/industries/metall/nornickel_ru.svg" alt="Норникель">
+										</div>
+										<div class="industries__pic">
+											<img src="/resources/images/industries/metall/spk.svg" alt="СПК">
+										</div>
+										<div class="industries__pic">
+											<img src="/resources/images/industries/metall/ztz.svg" alt="ЗТЗ">
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
+			<!-- Pagination -->
+			<div class="swiper-pagination industries__pag"></div>
 		</section>
 
 		<!-- Services section -->
@@ -656,7 +747,6 @@
 				</div>
 			</div>
 		</section>
-
 	</main>
 
 
@@ -768,14 +858,7 @@
 
 
 	<!-- SCRIPTS -->
-	<!-- Libs -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-	<script src="/scripts/hystmodal.min.js"></script>
-
-	<!-- Main scripts -->
-	<script src="/scripts/script.js?7"></script>
-
-
+	<? require($_SERVER["DOCUMENT_ROOT"] . "/modules/scripts.php"); ?>
 </body>
 
 </html>

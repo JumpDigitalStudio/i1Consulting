@@ -2,31 +2,7 @@
 <html lang="tr" prefix="og: http://ogp.me/ns#">
 
 <head>
-	<!-- Meta options -->
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-	<!-- Style connect links -->
-	<!-- Libs -->
-	<link rel="stylesheet" href="/resources/css/hystmodal.min.css?5">
-	<link rel="stylesheet" href="/resources/css/normalize.css?4">
-	<!-- Main -->
-	<link rel="stylesheet" href="/resources/css/style.css?6">
-
-	<!-- Font connect links -->
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-
-	<!-- Favicon -->
-	<link rel="apple-touch-icon" sizes="180x180" href="/resources/favicons/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="/resources/favicons/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="/resources/favicons/favicon-16x16.png">
-	<link rel="manifest" href="/resources/favicons/site.webmanifest">
-	<link rel="mask-icon" href="/resources/favicons/safari-pinned-tab.svg" color="#01426a">
-	<meta name="msapplication-TileColor" content="#01426a">
-	<meta name="theme-color" content="#ffffff">
+	<? require($_SERVER["DOCUMENT_ROOT"] . "/modules/meta.php"); ?>
 
 	<!-- SEO -->
 	<title>Lojistik optimizasyonu — i1 Consulting</title>
@@ -151,7 +127,6 @@
 
 	<!-- CONTENT -->
 	<main class="content page__content">
-
 		<!-- About section -->
 		<section class="about content__about" id="about">
 			<div class="container about__body">
@@ -300,63 +275,177 @@
 					</h2>
 				</div>
 				<!-- Cards -->
-				<div class="industries__cards">
-					<!-- Retail -->
-					<div class="industries__card card _anim _anim_d1">
-						<!-- Title -->
-						<div class="industries__title">
-							<h3 class="text text_xl text_wsb">PERAKENDE</h3>
-						</div>
-						<!-- Content -->
-						<div class="industries__content">
-							<p class="text text_m">
-								i1Consulting tarafından uygulanan TMS çözümleri, malların müşteriye, mağazaya, depoya teslim süresinin azaltılmasıyla işlem maliyetlerinin ve maliyetlerinin en aza indirilmesine yardımcı oldu.
-							</p>
-							<p class="text text_m text_wsb">
-
-								Bizimle çalış
-							</p>
-							<div class="industries__pics">
-								<div class="industries__pic">
-									<img src="/resources/images/industries/mvideo.svg" alt="М.Видео">
+				<div class="swiper industries__slider">
+					<div class="swiper-wrapper">
+						<!-- Slides -->
+						<!-- Retail -->
+						<div class="swiper-slide">
+							<div class="industries__card card _anim _anim_d1">
+								<!-- Title -->
+								<div class="industries__title">
+									<h3 class="text text_xl text_wsb">RETAIL</h3>
 								</div>
-								<div class="industries__pic">
-									<img src="/resources/images/industries/miratorg.svg" alt="Мираторг">
-								</div>
-								<div class="industries__pic">
-									<img src="/resources/images/industries/globus.svg" alt="Globus">
+								<!-- Content -->
+								<div class="industries__content">
+									<p class="text text_m">
+										TMS solution, implemented by i1Consulting company allowed to combine reduction in shipment delivery time to the client, store, warehose with minimizing operational costs and expenses.
+									</p>
+									<p class="text text_m text_wsb">
+										Work with us
+									</p>
+									<div class="industries__pics">
+										<div class="industries__pic">
+											<img src="/resources/images/industries/retail/mvideo.svg" alt="M.Video">
+										</div>
+										<div class="industries__pic">
+											<img src="/resources/images/industries/retail/miratorg.svg" alt="Miratorg">
+										</div>
+										<div class="industries__pic">
+											<img src="/resources/images/industries/retail/globus.svg" alt="Globus">
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
-					</div>
-					<!-- Oil & Gas -->
-					<div class="industries__card card _anim _anim_d1">
-						<!-- Title -->
-						<div class="industries__title">
-							<h3 class="text text_xl text_wsb">
-								YAĞ VE GAZ
-							</h3>
-						</div>
-						<!-- Content -->
-						<div class="industries__content">
-							<p class="text text_m">
-								Petrol ve gaz şirketleri için lojistik süreçlerin otomasyonu. Taşıma yönetim sistemlerinin tanıtılması, çizelgeleme sürecini dijitalleştirmeyi, taşıma yürütmenin şeffaflığını artırmayı ve karşı taraflarla taşıma maliyetlerinin mutabakatını otomatikleştirmeyi mümkün kıldı.
-							</p>
-							<p class="text text_m text_wsb">
-								Bizimle çalış
-							</p>
-							<div class="industries__pics">
-								<div class="industries__pic">
-									<img src="/resources/images/industries/gazprom.svg" alt="Газпром">
+						<!-- Oil & Gas -->
+						<div class="swiper-slide">
+							<div class="industries__card card _anim _anim_d1">
+								<!-- Title -->
+								<div class="industries__title">
+									<h3 class="text text_xl text_wsb">OIL AND GAS</h3>
 								</div>
-								<div class="industries__pic">
-									<img src="/resources/images/industries/lukoil.svg" alt="Лукойл">
+								<!-- Content -->
+								<div class="industries__content">
+									<p class="text text_m">
+										Logistic processes automation for petrochemical companies. Implementation of transport management system allowed to digitalize calendar planning process, increase transparency in shipment completion, allowed automate reconciliation of transportation costs with counterparties.
+									</p>
+									<p class="text text_m text_wsb">
+										Work with us
+									</p>
+									<div class="industries__pics">
+										<div class="industries__pic">
+											<img src="/resources/images/industries/oilgas/gazprom_en.svg" alt="Gazprom">
+										</div>
+										<div class="industries__pic">
+											<img src="/resources/images/industries/oilgas/lukoil_en.svg" alt="Lukoil">
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- Production -->
+						<div class="swiper-slide">
+							<div class="industries__card card _anim _anim_d1">
+								<!-- Title -->
+								<div class="industries__title">
+									<h3 class="text text_xl text_wsb">PRODUCTION</h3>
+								</div>
+								<!-- Content -->
+								<div class="industries__content">
+									<p class="text text_m">
+										Implementation of corporate systems, which ensures horizontal and vertical business processes integration and data flow inside the company and creation of efficient tool for taking timely executive decisions on operative and strategic level.
+									</p>
+									<p class="text text_m text_wsb">
+										Work with us
+									</p>
+									<div class="industries__pics">
+										<div class="industries__pic">
+											<img src="/resources/images/industries/production/polus_en.svg" alt="Polus">
+										</div>
+										<div class="industries__pic">
+											<img src="/resources/images/industries/production/ee.png" alt="Enter Engineering">
+										</div>
+										<div class="industries__pic">
+											<img src="/resources/images/industries/production/ferroni.svg" alt="Ferroni">
+										</div>
+										<div class="industries__pic">
+											<img src="/resources/images/industries/production/ecg.png" alt="Euro Cement Group">
+										</div>
+										<div class="industries__pic">
+											<img src="/resources/images/industries/production/silmash.svg" alt="Silovie mashini">
+										</div>
+										<div class="industries__pic">
+											<img src="/resources/images/industries/production/rsm.svg" alt="Rostselmash">
+										</div>
+										<div class="industries__pic">
+											<img src="/resources/images/industries/production/ilim.svg" alt="Ilim">
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- Chemistry -->
+						<div class="swiper-slide">
+							<div class="industries__card card _anim _anim_d1">
+								<!-- Title -->
+								<div class="industries__title">
+									<h3 class="text text_xl text_wsb">CHEMISTRY</h3>
+								</div>
+								<!-- Content -->
+								<div class="industries__content">
+									<p class="text text_m">
+										Complex of activities are designed and implemented in automation of transport management business processes, solution for short-term planning on current demands, completion of shipments, formation of customized reporting print forms via corporate system.
+									</p>
+									<p class="text text_m text_wsb">
+										Work with us
+									</p>
+									<div class="industries__pics">
+										<div class="industries__pic">
+											<img src="/resources/images/industries/chemistry/sibur_en.svg" alt="Sibur">
+										</div>
+										<div class="industries__pic">
+											<img src="/resources/images/industries/chemistry/phosagro_en.svg" alt="Phosagro">
+										</div>
+										<div class="industries__pic">
+											<img src="/resources/images/industries/chemistry/nnh.svg" alt="NijnekamskNefteChem">
+										</div>
+										<div class="industries__pic">
+											<img src="/resources/images/industries/chemistry/azot.svg" alt="AZOT">
+										</div>
+										<div class="industries__pic">
+											<img src="/resources/images/industries/chemistry/eurochem.svg" alt="MHK EuroChem">
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- Metallurgy -->
+						<div class="swiper-slide">
+							<div class="industries__card card _anim _anim_d1">
+								<!-- Title -->
+								<div class="industries__title">
+									<h3 class="text text_xl text_wsb">METALLURGY</h3>
+								</div>
+								<!-- Content -->
+								<div class="industries__content">
+									<p class="text text_m">
+										Integration of platform solutions for completion of seamless shipping, using tracking systems and electronic transport-shipping documents.
+									</p>
+									<p class="text text_m text_wsb">
+										Work with us
+									</p>
+									<div class="industries__pics">
+										<div class="industries__pic">
+											<img src="/resources/images/industries/metall/severstal_en.svg" alt="Severstal">
+										</div>
+										<div class="industries__pic">
+											<img src="/resources/images/industries/metall/nornickel_en.svg" alt="Nornickel">
+										</div>
+										<div class="industries__pic">
+											<img src="/resources/images/industries/metall/spk.svg" alt="SPK">
+										</div>
+										<div class="industries__pic">
+											<img src="/resources/images/industries/metall/ztz.svg" alt="ZTZ">
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
+			<!-- Pagination -->
+			<div class="swiper-pagination industries__pag"></div>
 		</section>
 
 		<!-- Services section -->
@@ -581,7 +670,6 @@
 				</div>
 			</div>
 		</section>
-
 	</main>
 
 
@@ -703,14 +791,7 @@
 
 
 	<!-- SCRIPTS -->
-	<!-- Libs -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-	<script src="/scripts/hystmodal.min.js"></script>
-
-	<!-- Main scripts -->
-	<script src="/scripts/script.js?7"></script>
-
-
+	<? require($_SERVER["DOCUMENT_ROOT"] . "/modules/scripts.php"); ?>
 </body>
 
 </html>

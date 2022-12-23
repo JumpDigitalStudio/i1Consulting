@@ -1102,19 +1102,32 @@ html {
   }
 }
 
+.industries {
+  position: relative;
+}
 .industries__body {
   flex-direction: column;
 }
-.industries__cards {
-  display: flex;
-  flex-direction: column;
-  row-gap: 40px;
+.industries__slider {
   width: 100%;
 }
+.industries__pag {
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.industries__pag > .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  background-color: #01426A;
+}
 .industries__card {
+  margin: 10px;
   padding: 48px;
   display: flex;
   flex-direction: column;
+  cursor: pointer;
   row-gap: 48px;
 }
 .industries__content {
@@ -1125,8 +1138,9 @@ html {
 .industries__pics {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  -moz-column-gap: 40px;
-       column-gap: 40px;
+  -moz-column-gap: 30px;
+       column-gap: 30px;
+  row-gap: 30px;
 }
 .industries__pic {
   border-radius: 22px;
@@ -1138,8 +1152,8 @@ html {
 }
 .industries__pic > img {
   height: 100%;
-  max-height: 100px;
-  width: 100%;
+  max-height: 80px;
+  width: auto;
   max-width: 100%;
 }
 @media (max-width: 768px) {

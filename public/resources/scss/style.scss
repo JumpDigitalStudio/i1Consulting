@@ -1413,22 +1413,36 @@ html {
 
 // Industries
 .industries {
+	position: relative;
+
 	&__body {
 		flex-direction: column;
 	}
 
-	&__cards {
-		display: flex;
-		flex-direction: column;
-		row-gap: 40px;
-
+	&__slider {
 		width: 100%;
 	}
 
+	&__pag {
+		position: absolute;
+		bottom: 0px;
+		left: 50%;
+		transform: translateX(-50%);
+
+		&>.swiper-pagination-bullet {
+			width: 10px;
+			height: 10px;
+			background-color: $B1;
+		}
+	}
+
 	&__card {
+		margin: 10px;
 		padding: 48px;
 		display: flex;
 		flex-direction: column;
+
+		cursor: pointer;
 
 		row-gap: 48px;
 	}
@@ -1442,7 +1456,8 @@ html {
 	&__pics {
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
-		column-gap: 40px;
+		column-gap: 30px;
+		row-gap: 30px;
 	}
 
 	&__pic {
@@ -1457,13 +1472,11 @@ html {
 
 		&>img {
 			height: 100%;
-			max-height: 100px;
-			width: 100%;
+			max-height: 80px;
+			width: auto;
 			max-width: 100%;
 		}
 	}
-
-	@media (max-width: 992px) {}
 
 	@media (max-width: 768px) {
 		&__card {
