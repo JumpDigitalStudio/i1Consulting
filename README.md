@@ -2,7 +2,7 @@
 
 Experts in digitalization of logistics business-processes web-site.
 
-![Logo](https://github.com/JumpDigitalStudio/i1Consilting/blob/master/favicons/mstile-150x150.png)
+![Logo](https://github.com/JumpDigitalStudio/i1Consilting/blob/master/public/resources/images/favicons/mstile-150x150.png)
 ## Commerce
 
 http://i1.consulting/
